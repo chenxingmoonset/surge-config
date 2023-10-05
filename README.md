@@ -1,3 +1,3 @@
-# surge config
+# js
 
-用于存储一些surge的配置文件
+用于存储一些脚本
