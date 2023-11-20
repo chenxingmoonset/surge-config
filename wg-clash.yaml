@@ -1,0 +1,66 @@
+socks-port: 7777
+allow-lan: true
+mode: rule
+log-level: debug
+ipv6: true
+geodata-mode: true
+tcp-concurrent: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver: [223.5.5.5, 119.29.29.29]
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+  fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
+  fallback-filter: {geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32]}
+proxies:
+  - {name: WARP, type: wireguard, server: 162.159.193.5, port: 2408, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP25, type: wireguard, server: 162.159.195.8, port: 1070, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP26, type: wireguard, server: 162.159.195.8, port: 1074, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP27, type: wireguard, server: 162.159.195.8, port: 1180, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP28, type: wireguard, server: 162.159.195.8, port: 1387, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP29, type: wireguard, server: 162.159.195.8, port: 1843, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP30, type: wireguard, server: 162.159.195.8, port: 2371, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP31, type: wireguard, server: 162.159.195.8, port: 2506, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP32, type: wireguard, server: 162.159.195.8, port: 3138, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP33, type: wireguard, server: 162.159.195.8, port: 3476, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP34, type: wireguard, server: 162.159.195.8, port: 3581, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP35, type: wireguard, server: 162.159.195.8, port: 3854, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP36, type: wireguard, server: 162.159.195.8, port: 4177, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP37, type: wireguard, server: 162.159.195.8, port: 4198, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP38, type: wireguard, server: 162.159.195.8, port: 4233, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP39, type: wireguard, server: 162.159.195.8, port: 5279, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP40, type: wireguard, server: 162.159.195.8, port: 5956, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP41, type: wireguard, server: 162.159.195.8, port: 7103, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP42, type: wireguard, server: 162.159.195.8, port: 7152, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP43, type: wireguard, server: 162.159.195.8, port: 7156, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP44, type: wireguard, server: 162.159.195.8, port: 7281, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+proxy-groups:
+  - name: Proxy
+    type: url-test
+    proxies:
+      - WARP
+      - WARP25
+      - WARP26
+      - WARP27
+      - WARP28
+      - WARP29
+      - WARP30
+      - WARP31
+      - WARP32
+      - WARP33
+      - WARP34
+      - WARP35
+      - WARP36
+      - WARP37
+      - WARP38
+      - WARP39
+      - WARP40
+      - WARP41
+      - WARP42
+      - WARP43
+      - WARP44
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH,Proxy
