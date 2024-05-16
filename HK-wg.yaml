@@ -1,0 +1,125 @@
+socks-port: 7777
+allow-lan: true
+mode: rule
+log-level: debug
+ipv6: true
+geodata-mode: true
+tcp-concurrent: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver: [223.5.5.5, 119.29.29.29]
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+  fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
+  fallback-filter: {geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32]}
+proxies:
+  - {name: WARP, type: wireguard, server: 162.159.193.5, port: 2408, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP1", "server": "104.28.213.200", "port": 854, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 854, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP2", "server": "104.28.213.200", "port": 859, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 859, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP3", "server": "104.28.213.200", "port": 864, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 864, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP4", "server": "104.28.213.200", "port": 878, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 878, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP5", "server": "104.28.213.200", "port": 880, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 880, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP6", "server": "104.28.213.200", "port": 890, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 890, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP7", "server": "104.28.213.200", "port": 891, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 891, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP8", "server": "104.28.213.200", "port": 894, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 894, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP9", "server": "104.28.213.200", "port": 903, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 903, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP10", "server": "104.28.213.200", "port": 908, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 908, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP11", "server": "104.28.213.200", "port": 928, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 928, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP12", "server": "104.28.213.200", "port": 934, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 934, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP13", "server": "104.28.213.200", "port": 939, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 939, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP14", "server": "104.28.213.200", "port": 942, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 942, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP15", "server": "104.28.213.200", "port": 943, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 943, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP16", "server": "104.28.213.200", "port": 945, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 945, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP17", "server": "104.28.213.200", "port": 946, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 946, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP18", "server": "104.28.213.200", "port": 955, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 955, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP19", "server": "104.28.213.200", "port": 968, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 968, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP20", "server": "104.28.213.200", "port": 987, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 987, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP21", "server": "104.28.213.200", "port": 988, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 988, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP22", "server": "104.28.213.200", "port": 1002, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 1002, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP23", "server": "104.28.213.200", "port": 1010, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 1010, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {"type": "wireguard", "name": "WARP24", "server": "104.28.213.200", "port": 1014, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 1014, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45, dns: [8.8.8.8, 1.1.1.1]}
+  - {name: WARP25, type: wireguard, server: 104.28.213.200, port: 1070, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP26, type: wireguard, server: 104.28.213.200, port: 1074, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP27, type: wireguard, server: 104.28.213.200, port: 1180, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP28, type: wireguard, server: 104.28.213.200, port: 1387, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP29, type: wireguard, server: 104.28.213.200, port: 1843, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP30, type: wireguard, server: 104.28.213.200, port: 2371, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP31, type: wireguard, server: 104.28.213.200, port: 2506, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP32, type: wireguard, server: 104.28.213.200, port: 3138, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP33, type: wireguard, server: 104.28.213.200, port: 3476, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP34, type: wireguard, server: 104.28.213.200, port: 3581, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP35, type: wireguard, server: 104.28.213.200, port: 3854, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP36, type: wireguard, server: 104.28.213.200, port: 4177, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP37, type: wireguard, server: 104.28.213.200, port: 4198, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP38, type: wireguard, server: 104.28.213.200, port: 4233, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP39, type: wireguard, server: 104.28.213.200, port: 5279, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP40, type: wireguard, server: 104.28.213.200, port: 5956, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP41, type: wireguard, server: 104.28.213.200, port: 7103, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP42, type: wireguard, server: 104.28.213.200, port: 7152, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP43, type: wireguard, server: 104.28.213.200, port: 7156, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {name: WARP44, type: wireguard, server: 104.28.213.200, port: 7281, ip: 172.16.0.2, public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=, private-key: sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=, mtu: 1280, udp: true}
+  - {"type": "wireguard", "name": "WARP45", "server": "104.28.213.200", "port": 7559, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 7559, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45}
+  - {"type": "wireguard", "name": "WARP46", "server": "104.28.213.200", "port": 8319, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 8319, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45}
+  - {"type": "wireguard", "name": "WARP47", "server": "104.28.213.200", "port": 8742, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 8742, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45}
+  - {"type": "wireguard", "name": "WARP48", "server": "104.28.213.200", "port": 8854, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 8854, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45}
+  - {"type": "wireguard", "name": "WARP49", "server": "104.28.213.200", "port": 8886, "ip": "172.16.0.2", "private-key": "sBYPbnpB3svPXYFvpUGIKlDWzqpZeCE025pZdHHi61I=", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "mtu": 1280, "keepalive": 45, "allowed-ips": ["0.0.0.0/0", "::/0"], "udp": true, "peers": [{"server": "104.28.213.200", "port": 8886, "ip": "172.16.0.2", "public-key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=", "allowed_ips": ["0.0.0.0/0", "::/0"]}], "persistent-keepalive": 45}
+proxy-groups:
+  - name: Proxy
+    type: url-test
+    proxies:
+      - WARP
+      - WARP25
+      - WARP26
+      - WARP27
+      - WARP28
+      - WARP29
+      - WARP30
+      - WARP31
+      - WARP32
+      - WARP33
+      - WARP34
+      - WARP35
+      - WARP36
+      - WARP37
+      - WARP38
+      - WARP39
+      - WARP40
+      - WARP41
+      - WARP42
+      - WARP43
+      - WARP44
+      - WARP1
+      - WARP2
+      - WARP3
+      - WARP4
+      - WARP5
+      - WARP6
+      - WARP7
+      - WARP8
+      - WARP9
+      - WARP10
+      - WARP11
+      - WARP12
+      - WARP13
+      - WARP14
+      - WARP15
+      - WARP16
+      - WARP17
+      - WARP18
+      - WARP19
+      - WARP20
+      - WARP21
+      - WARP22
+      - WARP23
+      - WARP24
+      - WARP45
+      - WARP46
+      - WARP47
+      - WARP48
+      - WARP49
+    include-all: true
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH,Proxy
