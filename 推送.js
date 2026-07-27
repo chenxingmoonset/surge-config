@@ -1,3 +1,4 @@
+/*surge app已不可用(取消了$notification API)*/
 function Notify_Demo()
 {
 var Title,SubTitle,Content;
